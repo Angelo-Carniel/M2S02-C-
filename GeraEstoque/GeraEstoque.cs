@@ -48,8 +48,9 @@ class Program
     static void CadastrarProduto()
     {
         string descricao;
-        double quantidade;
-        double valor;
+        int quantidade;
+        double valorCompra;
+        double valorVenda;
         char continua = 's';
 
         do{
@@ -60,10 +61,13 @@ class Program
             descricao = Console.ReadLine();
             
             Console.WriteLine("Insira a quantidade:");
-            quantidade = double.Parse(Console.ReadLine()); 
+            quantidade = int.Parse(Console.ReadLine()); 
             
-            Console.WriteLine("insira o valor:");
-            valor = double.Parse(Console.ReadLine());
+            Console.WriteLine("insira o valor de compra:");
+            valorCompra = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("insira o valor de venda:");
+            valorVenda = double.Parse(Console.ReadLine());
 
             Console.WriteLine("Deseja continuar? (s/n)");
             continua = Convert.ToChar(Console.ReadLine());
