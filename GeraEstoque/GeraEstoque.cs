@@ -47,11 +47,13 @@ class Program
 
     static void CadastrarProduto()
     {
+        string id;
         string descricao;
         int quantidade;
         double valorCompra;
         double valorVenda;
         char continua = 's';
+        Guid guid = Guid.NewGuid();
 
         do{
 
@@ -72,11 +74,23 @@ class Program
             Console.WriteLine("Deseja continuar? (s/n)");
             continua = Convert.ToChar(Console.ReadLine());
 
-            //p0.addItem(descricao, quantidade, valor);
+            id = guid.ToString();
 
             }while (continua == 's');
 
-            //Console.WriteLine("Total: " + p0.TotalPedido())
+            Console.Clear();
 
+            Console.WriteLine("Produto cadastrado com sucesso!");
+            
+            Console.WriteLine($"Nome: {descricao}");
+            Console.WriteLine($"Quantidade: {quantidade}");
+            Console.WriteLine($"{valorCompra}");
+            Console.WriteLine($"{valorVenda}");
+            Console.WriteLine($"id: {id}");
+    }
+
+    static void criaGuid()
+    {
+        Guid guid = Guid.NewGuid();
     }
 }
